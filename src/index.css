@@ -11,3 +11,23 @@
   font-size: 10px;
   color: gray;
 }
+
+.btn {
+  color: blue;
+  padding: 8px;
+  border-radius: 100%;
+  border:none
+}
+
+.btn:hover {
+  background: #e0e0e0;
+  color:black
+}
+
+.btn:focus {
+  background: #43a047;
+  color: white;
+  padding: 8px;
+  border-radius: 100%;
+  border:none
+}

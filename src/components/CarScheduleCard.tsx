@@ -10,7 +10,7 @@ interface CarCardProps {
 const CarScheduleCard: React.FC<CarCardProps> = ({ car }) => {
   return (
     <Box
-      width="10rem"
+      width={{sm:"12rem"}}
       height="18rem"
       display="flex"
       flexDirection="column"

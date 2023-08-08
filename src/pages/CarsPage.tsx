@@ -40,7 +40,7 @@ const CarsPage:React.FC<loggedUserProps> = ({user}) => {
         <Typography variant="h4">{`${carData?.nome}`}</Typography>
       </Box>
       <Box marginTop={4}>
-        <Box display="flex" justifyContent="space-around">
+        <Box display="flex" flexDirection={{xs: "column", sm:"row"}} justifyContent="space-around">
           {carData && <CarScheduleCard car={carData} />}
           {carData && <ScheduleField data={schedule} user={user} car={carData} />}
         </Box>

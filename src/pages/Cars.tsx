@@ -19,7 +19,7 @@ function Cars() {
       <Box marginTop={4}>
         <Typography variant="h4">Nossos Carros</Typography>
       </Box>
-      <Box marginTop={4}>
+      <Box marginTop={4} >
         <Typography variant="h6">Temos a melhor frota da região!</Typography>
         <Typography variant="body2">
           Escolha o seu modelo abaixo e agende já uma visita.
@@ -29,7 +29,9 @@ function Cars() {
           flexWrap="wrap"
           marginY={4}
           gap={1}
-          justifyContent="space-between"
+          justifyContent={{xs: "center",sm:"space-around"}}
+          alignItems="center"
+          width="100%"
         >
           {cars.map((item) => (
             <CarCard

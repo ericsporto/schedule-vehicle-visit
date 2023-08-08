@@ -52,7 +52,8 @@ const ConfirmScheduleModal: React.FC<ConfirmScheduleModalProps> = ({
           width="100%"
           justifyContent="center"
           alignItems="center"
-          paddingTop={15}
+          paddingTop={{xs:5,sm:15}}
+          textAlign="center"
         >
           <CheckCircleIcon color="success" />
           <Typography variant="h5">Agendamento concluído!</Typography>
@@ -61,6 +62,7 @@ const ConfirmScheduleModal: React.FC<ConfirmScheduleModalProps> = ({
         <DialogContent>
           <Box
             display="flex"
+            flexDirection={{xs:"column", sm:"row"}}
             alignItems="center"
             justifyContent="center"
             gap={2}
@@ -82,7 +84,7 @@ const ConfirmScheduleModal: React.FC<ConfirmScheduleModalProps> = ({
           <Typography></Typography>
         </DialogContent>
         <DialogActions>
-          <Box display="flex" justifyContent="center" width="100%" padding={10}>
+          <Box display="flex" justifyContent="center" width="100%" padding={{xs:3, sm:10}}>
             <Button
               variant="contained"
               color="error"

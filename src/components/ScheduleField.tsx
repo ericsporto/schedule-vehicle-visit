@@ -10,7 +10,7 @@ import { CarsModel } from '../interfaces/cars';
 interface ScheduleFieldProps {
   data: ScheduleModel[];
   user: UserModel;
-  car: CarsModel
+  car: CarsModel;
 }
 
 const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
@@ -116,7 +116,7 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
         address={car.local}
       />
       <Box
-        width="30rem"
+        width={{ sm: '30rem' }}
         height="20rem"
         display="flex"
         flexDirection="column"
@@ -126,6 +126,7 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
         borderRadius={2}
         boxShadow="2px 3px 5px 0px"
         overflow="hidden"
+        marginTop={{ xs: '10px', sm: '0px' }}
       >
         <Box
           display="flex"
@@ -144,8 +145,8 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
             display="flex"
             flexDirection="column"
             height="100%"
-            padding={2}
-            width="80%"
+            padding={{ sm: 2 }}
+            width={{ sm: '80%' }}
             alignItems="flex-start"
           >
             <Box display="flex" width="100%" justifyContent="space-evenly">
@@ -177,9 +178,12 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
                   {howSchedule?.map((item) => {
                     return item.days.map((day, index) => (
                       <Box display="flex" key={index}>
-                        <Button onClick={() => handleDay(day.day)}>
+                        <button
+                          className="btn"
+                          onClick={() => handleDay(day.day)}
+                        >
                           {day.day}
-                        </Button>
+                        </button>
                       </Box>
                     ));
                   })}
@@ -197,12 +201,12 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
                 >
                   {howScheduleDay?.map((item, index) => (
                     <Box display="flex" key={index}>
-                      <Button
+                      <button
+                        className="btn"
                         onClick={() => handleChoiceHour(item.hour)}
-                        sx={{ color: '#757070' }}
                       >
                         {item.hour}
-                      </Button>
+                      </button>
                     </Box>
                   ))}
                 </Box>
@@ -226,9 +230,12 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
                   {howSchedule?.map((item) => {
                     return item.days.map((day, index) => (
                       <Box display="flex" key={index}>
-                        <Button onClick={() => handleDay(day.day)}>
+                        <button
+                          className="btn"
+                          onClick={() => handleDay(day.day)}
+                        >
                           {day.day}
-                        </Button>
+                        </button>
                       </Box>
                     ));
                   })}
@@ -246,12 +253,12 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
                 >
                   {howScheduleDay?.map((item, index) => (
                     <Box display="flex" key={index}>
-                      <Button
+                      <button
+                        className="btn"
                         onClick={() => handleChoiceHour(item.hour)}
-                        sx={{ color: '#757070' }}
                       >
                         {item.hour}
-                      </Button>
+                      </button>
                     </Box>
                   ))}
                 </Box>
@@ -264,7 +271,7 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
             display="flex"
             flexDirection="column"
             height="100%"
-            padding={3}
+            padding={{sm:3}}
             justifyContent="space-evenly"
             alignItems="center"
           >
@@ -296,14 +303,14 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
             <Button
               onClick={confirm ? () => submit() : () => handleChoiceConfirm()}
               disabled={disabled}
-              color='error'
+              color="error"
               variant="contained"
             >
               {isLoading ? <Spinner /> : 'Agendar visita'}
             </Button>
           )}
           {confirm && (
-            <Box display="flex" gap={5}>
+            <Box display="flex" gap={{xs:1, sm:5}} paddingX={{xs:1, sm:0}}>
               <Button
                 onClick={() => setConfirm(false)}
                 disabled={disabled}
@@ -314,7 +321,7 @@ const ScheduleField: React.FC<ScheduleFieldProps> = ({ data, user, car }) => {
               <Button
                 onClick={confirm ? () => submit() : () => handleChoiceConfirm()}
                 disabled={disabled}
-                color='error'
+                color="error"
                 variant="contained"
               >
                 {isLoading ? <Spinner /> : 'Concluir'}
