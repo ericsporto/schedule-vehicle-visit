@@ -7,11 +7,12 @@ interface GoBackFieldProps {
 
 const GoBackField: React.FC<GoBackFieldProps> = ({ goBackFunction }) => {
   return (
-    <Box marginY={4}>
+    <Box marginY={2}>
       <Button
         onClick={goBackFunction}
         startIcon={<ArrowLeft />}
-        variant="outlined"
+        color='inherit'
+        variant="contained"
         sx={{ color: '#212121', border: '1px solid #212121' }}
       >
         Voltar

@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { UserModel } from '../interfaces/user';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Logo from '../../public/favicon.png';
 
@@ -24,6 +24,7 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
   const pages = [
+    { page: 'Início', href: '/' },
     { page: 'Nossa história', href: '/history' },
     { page: 'Carros', href: '/cars' },
   ];
@@ -53,7 +54,13 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
     <AppBar position="static" sx={{ background: '#242424' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Avatar alt="avatar" src={Logo}  sx={{display: { xs: 'none', md: 'flex' }, paddingRight:"1rem" }}/>
+          <Link to={'/'}>
+            <Avatar
+              alt="logo"
+              src={Logo}
+              sx={{ display: { xs: 'none', md: 'flex' }, paddingRight: '1rem' }}
+            />
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
