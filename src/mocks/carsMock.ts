@@ -41,4 +41,15 @@ export const cars: CarsModel[] = [
     km: '94.527',
     local: 'São Paulo',
   },
+  {
+    id: 5,
+    nome: 'HONDA CIVIC',
+    img: 'https://image1.mobiauto.com.br/images/api/images/v1.0/206236951/transform/fl_progressive,f_webp,q_70,w_290',
+    desc: '2S ED.TOURING 2.0 16V AUT. (HÍBRIDO)',
+    preco: 244900,
+    ano: '2023',
+    km: '0',
+    local: 'Rio de Janeiro',
+  },
+  
 ];

@@ -18,9 +18,6 @@ const Home:React.FC<loggedUserProps> = ({user}) => {
           voluptas ea ut, odit possimus neque, dolor sapiente maiores autem?
           Alias, incidunt fuga?
         </Typography>
-        <Box marginY={4}>
-
-        </Box>
       </Box>
     </Container>
   );

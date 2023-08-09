@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { UserModel } from '../interfaces/user';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import Logo from '../../public/favicon.png';
+import Logo from '../../src/assets/favicon.png';
 
 interface HeaderProps {
   user: UserModel;
@@ -113,7 +113,8 @@ const Header: React.FC<HeaderProps> = ({ user }) => {
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
+          <Box display="flex" alignItems="center" gap={2} sx={{ flexGrow: 0 }}>
+            <p className='paragraph'>{user.email}</p>
             <Tooltip title="Abrir configurações">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Carlos Lopes" src={user.avatar} />

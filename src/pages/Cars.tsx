@@ -16,7 +16,7 @@ function Cars() {
   };
   return (
     <Container sx={{ display: 'flex-column', justifyContent: 'center' }}>
-      <Box marginTop={4}>
+      <Box marginTop={3}>
         <Typography variant="h4">Nossos Carros</Typography>
       </Box>
       <Box marginTop={4} >
